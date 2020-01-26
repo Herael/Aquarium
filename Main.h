@@ -6,11 +6,9 @@
 #define AQUARIUM_MAIN_H
 
 
-
 class Main {
 
 };
-
 
 
 #endif //AQUARIUM_MAIN_H

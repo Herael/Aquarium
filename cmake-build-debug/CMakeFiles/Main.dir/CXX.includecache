@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/benjaminrousval/esgi/c++/Aquarium/Main.cpp
+iostream
+-
+Main.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Main.h
+
+/Users/benjaminrousval/esgi/c++/Aquarium/Main.h
+
