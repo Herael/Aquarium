@@ -70,17 +70,62 @@ CMakeFiles/Main.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/Main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/benjaminrousval/esgi/c++/Aquarium/Main.cpp -o CMakeFiles/Main.dir/Main.cpp.s
 
+CMakeFiles/Main.dir/Fish.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/Fish.cpp.o: ../Fish.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/benjaminrousval/esgi/c++/Aquarium/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Main.dir/Fish.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Main.dir/Fish.cpp.o -c /Users/benjaminrousval/esgi/c++/Aquarium/Fish.cpp
+
+CMakeFiles/Main.dir/Fish.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Main.dir/Fish.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/benjaminrousval/esgi/c++/Aquarium/Fish.cpp > CMakeFiles/Main.dir/Fish.cpp.i
+
+CMakeFiles/Main.dir/Fish.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/Fish.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/benjaminrousval/esgi/c++/Aquarium/Fish.cpp -o CMakeFiles/Main.dir/Fish.cpp.s
+
+CMakeFiles/Main.dir/Seaweed.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/Seaweed.cpp.o: ../Seaweed.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/benjaminrousval/esgi/c++/Aquarium/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Main.dir/Seaweed.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Main.dir/Seaweed.cpp.o -c /Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.cpp
+
+CMakeFiles/Main.dir/Seaweed.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Main.dir/Seaweed.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.cpp > CMakeFiles/Main.dir/Seaweed.cpp.i
+
+CMakeFiles/Main.dir/Seaweed.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/Seaweed.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.cpp -o CMakeFiles/Main.dir/Seaweed.cpp.s
+
+CMakeFiles/Main.dir/Aquarium.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/Aquarium.cpp.o: ../Aquarium.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/benjaminrousval/esgi/c++/Aquarium/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Main.dir/Aquarium.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Main.dir/Aquarium.cpp.o -c /Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.cpp
+
+CMakeFiles/Main.dir/Aquarium.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Main.dir/Aquarium.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.cpp > CMakeFiles/Main.dir/Aquarium.cpp.i
+
+CMakeFiles/Main.dir/Aquarium.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/Aquarium.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.cpp -o CMakeFiles/Main.dir/Aquarium.cpp.s
+
 # Object files for target Main
 Main_OBJECTS = \
-"CMakeFiles/Main.dir/Main.cpp.o"
+"CMakeFiles/Main.dir/Main.cpp.o" \
+"CMakeFiles/Main.dir/Fish.cpp.o" \
+"CMakeFiles/Main.dir/Seaweed.cpp.o" \
+"CMakeFiles/Main.dir/Aquarium.cpp.o"
 
 # External object files for target Main
 Main_EXTERNAL_OBJECTS =
 
 Main: CMakeFiles/Main.dir/Main.cpp.o
+Main: CMakeFiles/Main.dir/Fish.cpp.o
+Main: CMakeFiles/Main.dir/Seaweed.cpp.o
+Main: CMakeFiles/Main.dir/Aquarium.cpp.o
 Main: CMakeFiles/Main.dir/build.make
 Main: CMakeFiles/Main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/benjaminrousval/esgi/c++/Aquarium/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/benjaminrousval/esgi/c++/Aquarium/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

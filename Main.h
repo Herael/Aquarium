@@ -5,9 +5,7 @@
 #ifndef AQUARIUM_MAIN_H
 #define AQUARIUM_MAIN_H
 
-
 class Main {
-
 };
 
 

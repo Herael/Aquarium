@@ -80,10 +80,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.cpp">
+			<Option target="Main"/>
+		</Unit>
+		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.h">
+			<Option target="Main"/>
+		</Unit>
+		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Fish.cpp">
+			<Option target="Main"/>
+		</Unit>
+		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Fish.h">
+			<Option target="Main"/>
+		</Unit>
 		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Main.cpp">
 			<Option target="Main"/>
 		</Unit>
 		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Main.h">
+			<Option target="Main"/>
+		</Unit>
+		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.cpp">
+			<Option target="Main"/>
+		</Unit>
+		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h">
 			<Option target="Main"/>
 		</Unit>
 		<Unit filename="/Users/benjaminrousval/esgi/c++/Aquarium/CMakeLists.txt">

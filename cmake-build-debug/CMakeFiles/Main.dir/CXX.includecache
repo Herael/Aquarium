@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.cpp
+Aquarium.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.h
+
+/Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.h
+Fish.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
+Seaweed.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h
+iostream
+-
+vector
+-
+
+/Users/benjaminrousval/esgi/c++/Aquarium/Fish.cpp
+Fish.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
+iostream
+-
+
+/Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
+iostream
+-
+
 /Users/benjaminrousval/esgi/c++/Aquarium/Main.cpp
 iostream
 -
@@ -13,4 +37,10 @@ Main.h
 /Users/benjaminrousval/esgi/c++/Aquarium/Main.h
 
 /Users/benjaminrousval/esgi/c++/Aquarium/Main.h
+
+/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.cpp
+Seaweed.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h
+
+/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h
 

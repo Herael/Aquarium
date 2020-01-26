@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Main.dir/Aquarium.cpp.o"
+  "CMakeFiles/Main.dir/Fish.cpp.o"
   "CMakeFiles/Main.dir/Main.cpp.o"
+  "CMakeFiles/Main.dir/Seaweed.cpp.o"
   "Main"
   "Main.pdb"
 )
