@@ -10,8 +10,11 @@ CMakeFiles/Main.dir/Fish.cpp.o
  /Users/benjaminrousval/esgi/c++/Aquarium/Fish.cpp
  /Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
 CMakeFiles/Main.dir/Main.cpp.o
+ /Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.h
+ /Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
  /Users/benjaminrousval/esgi/c++/Aquarium/Main.cpp
  /Users/benjaminrousval/esgi/c++/Aquarium/Main.h
+ /Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h
 CMakeFiles/Main.dir/Seaweed.cpp.o
  /Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.cpp
  /Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h

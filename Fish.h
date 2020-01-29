@@ -8,13 +8,16 @@
 
 using namespace std;
 
+enum Breed {merou, thon, poissonClown, sole, bar, carpe};
+
 class Fish {
 private:
     int hp;
     string name;
     bool gender;
-    enum Breed {merou, thon, poissonClown, sole, bar, carpe};
+    bool isCarnivorous;
     Breed breed;
+    int turn;
 
 public:
 
@@ -22,14 +25,18 @@ public:
     const string &getName() const;
     bool isGender() const;
     Breed getBreed() const;
+    bool getIsCarnivorous() const;
+    int getTurn() const;
 
     void setHp(int hp);
     void setName(const string &name);
     void setGender(bool gender);
     void setBreed(Breed breed);
+    void setIsCarnivorous(bool isCarnivorous);
+    void setTurn(int turn);
 
 
-    Fish(int hp, const string &name, bool gender, Breed breed);
+    Fish(int hp, const string &name, bool gender, Breed breed, int turn);
 
     //ToString
     friend ostream &operator<<(ostream &os, const Fish &fish);

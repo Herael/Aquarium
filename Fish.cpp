@@ -16,8 +16,14 @@ const string &Fish::getName() const {
 bool Fish::isGender() const {
     return gender;
 }
-Fish::Breed Fish::getBreed() const {
+Breed Fish::getBreed() const {
     return breed;
+}
+bool Fish::getIsCarnivorous() const {
+    return isCarnivorous;
+}
+int Fish::getTurn() const {
+    return turn;
 }
 
 void Fish::setHp(int hp) {
@@ -29,15 +35,29 @@ void Fish::setName(const string &name) {
 void Fish::setGender(bool gender) {
     Fish::gender = gender;
 }
-void Fish::setBreed(Fish::Breed breed) {
+void Fish::setBreed(Breed breed) {
     Fish::breed = breed;
 }
+void Fish::setIsCarnivorous(bool isCarnivorous) {
+    Fish::isCarnivorous = isCarnivorous;
+}
+void Fish::setTurn(int turn) {
+    Fish::turn = turn;
+}
 
-Fish::Fish(int hp, const string &name, bool gender, Fish::Breed breed) : hp(hp), name(name), gender(gender),breed(breed) {}
+
+Fish::Fish(int hp, const string &name, bool gender, Breed breed, int turn) : hp(hp), name(name), gender(gender),breed(breed), turn(turn) {
+    isCarnivorous = breed == thon || breed == poissonClown || breed == merou;
+}
 
 
 //ToString
 ostream &operator<<(ostream &os, const Fish &fish) {
-    os << "hp: " << fish.hp << " name: " << fish.name << " gender: " << fish.gender << " breed: " << fish.breed;
+    os << "hp: " << fish.hp
+    << " name: " << fish.name
+    << " gender: " << fish.gender
+    << " breed: " << fish.breed
+    << " isCarnivorous: " << fish.isCarnivorous
+    << " turn: " << fish.turn;
     return os;
 }

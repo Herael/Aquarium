@@ -18,6 +18,7 @@ private:
 
     vector<Fish> fishs;
     vector<Seaweed> seaweeds;
+    int turn;
 
 public:
 
@@ -29,9 +30,17 @@ public:
 
     void addFish(Fish fish);
     void addSeaweed(Seaweed seaweed);
-    static void passTime();
 
+    int getTurn() const;
+
+    void setTurn(int turn);
+
+    void passTime();
+
+    Aquarium();
     Aquarium(const vector<Fish> &fishs, const vector<Seaweed> &seaweeds);
+
+    friend ostream &operator<<(ostream &os, const Aquarium &aquarium);
 
 
 };
