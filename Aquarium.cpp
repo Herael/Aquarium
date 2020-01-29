@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <vector>
-
 #include "Aquarium.h"
 
 
@@ -44,7 +43,32 @@ Aquarium::Aquarium(const vector<Fish> &fishs, const vector<Seaweed> &seaweeds) :
 void Aquarium::passTime() {
     Aquarium::turn += 1;
     //Display all fishs and all seaweeds (fix problem with .begin on vector)
+    int i;
+    if (Aquarium::fishs.empty()) {
+        cout << "No fish in water" << endl;
+    } else {
+        cout << "Fish : " << endl;
+        for (i = 0; i < Aquarium::fishs.size(); i++) {
+            cout << Aquarium::fishs[i] << " \n";
+        }
+    }
 
+    if (Aquarium::seaweeds.empty()) {
+        cout << "No seaweed in water" << endl;
+    } else {
+        cout << "\nSeaweed : " << Aquarium::seaweeds.size() << endl;
+    }
+
+//    For display seaweeds with details, use this version :
+//
+//    if (Aquarium::seaweeds.empty()) {
+//        cout << "No seaweed in water" << endl;
+//    } else {
+//        cout << "\nSeaweed : " << endl;
+//        for (i = 0; i < Aquarium::seaweeds.size(); i++) {
+//            cout << Aquarium::seaweeds[i] << endl;
+//        }
+//    }
 }
 
 
