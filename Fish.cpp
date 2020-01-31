@@ -4,13 +4,12 @@
 
 #include "Fish.h"
 #include <iostream>
-
-using namespace std;
+#include <vector>
 
 int Fish::getHp() const {
     return hp;
 }
-const string &Fish::getName() const {
+const std::string &Fish::getName() const {
     return name;
 }
 bool Fish::isGender() const {
@@ -29,7 +28,7 @@ int Fish::getTurn() const {
 void Fish::setHp(int hp) {
     Fish::hp = hp;
 }
-void Fish::setName(const string &name) {
+void Fish::setName(const std::string &name) {
     Fish::name = name;
 }
 void Fish::setGender(bool gender) {
@@ -46,13 +45,13 @@ void Fish::setTurn(int turn) {
 }
 
 
-Fish::Fish(int hp, const string &name, bool gender, Breed breed, int turn) : hp(hp), name(name), gender(gender),breed(breed), turn(turn) {
+Fish::Fish(int hp, const std::string &name, bool gender, Breed breed, int turn) : hp(hp), name(name), gender(gender),breed(breed), turn(turn) {
     isCarnivorous = breed == thon || breed == poissonClown || breed == merou;
 }
 
 
 //ToString
-ostream &operator<<(ostream &os, const Fish &fish) {
+std::ostream &operator<<(std::ostream &os, const Fish &fish) {
     os << "hp: " << fish.hp
     << " name: " << fish.name
     << " gender: " << fish.gender
@@ -60,4 +59,17 @@ ostream &operator<<(ostream &os, const Fish &fish) {
     << " isCarnivorous: " << fish.isCarnivorous
     << " turn: " << fish.turn;
     return os;
+}
+
+bool Fish::operator==(const Fish &fish) const {
+    return (hp == fish.hp &&
+            name == fish.name &&
+            gender == fish.gender &&
+            breed == fish.breed &&
+            isCarnivorous == fish.isCarnivorous &&
+            turn == fish.turn);
+}
+
+bool Fish::operator!=(const Fish &fish) const {
+    return !(fish == *this);
 }

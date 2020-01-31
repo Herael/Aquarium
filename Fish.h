@@ -5,15 +5,14 @@
 #ifndef AQUARIUM_FISH_H
 #define AQUARIUM_FISH_H
 #include <iostream>
-
-using namespace std;
+#include <vector>
 
 enum Breed {merou, thon, poissonClown, sole, bar, carpe};
 
 class Fish {
 private:
     int hp;
-    string name;
+    std::string name;
     bool gender;
     bool isCarnivorous;
     Breed breed;
@@ -22,24 +21,27 @@ private:
 public:
 
     int getHp() const;
-    const string &getName() const;
+    const std::string &getName() const;
     bool isGender() const;
     Breed getBreed() const;
     bool getIsCarnivorous() const;
     int getTurn() const;
 
     void setHp(int hp);
-    void setName(const string &name);
+    void setName(const std::string &name);
     void setGender(bool gender);
     void setBreed(Breed breed);
     void setIsCarnivorous(bool isCarnivorous);
     void setTurn(int turn);
 
-
-    Fish(int hp, const string &name, bool gender, Breed breed, int turn);
+    Fish(int hp, const std::string &name, bool gender, Breed breed, int turn);
 
     //ToString
-    friend ostream &operator<<(ostream &os, const Fish &fish);
+    friend std::ostream &operator<<(std::ostream &os, const Fish &fish);
+
+    bool operator==(const Fish &fish) const;
+    bool operator!=(const Fish &fish) const;
+
 };
 
 

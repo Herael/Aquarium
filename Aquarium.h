@@ -9,41 +9,35 @@
 #include <iostream>
 #include <vector>
 
-
-using namespace std;
-
-
 class Aquarium {
 private:
 
-    vector<Fish> fishs;
-    vector<Seaweed> seaweeds;
+    std::vector<Fish> fishs;
+    std::vector<Seaweed> seaweeds;
     int turn;
 
 public:
 
-    const vector<Fish> &getFishs() const;
-    const vector<Seaweed> &getSeaweeds() const;
+    const std::vector<Fish> &getFishs() const;
+    const std::vector<Seaweed> &getSeaweeds() const;
+    int getTurn() const;
 
-    void setFishs(const vector<Fish> &fishs);
-    void setSeaweeds(const vector<Seaweed> &seaweeds);
+    void setFishs(const std::vector<Fish> &fishs);
+    void setSeaweeds(const std::vector<Seaweed> &seaweeds);
+    void setTurn(int turn);
 
     void addFish(Fish fish);
     void addSeaweed(Seaweed seaweed);
 
-    int getTurn() const;
-
-    void setTurn(int turn);
-
     void passTime();
 
     Aquarium();
-    Aquarium(const vector<Fish> &fishs, const vector<Seaweed> &seaweeds);
+    Aquarium(const std::vector<Fish> &fishs, const std::vector<Seaweed> &seaweeds);
 
-    friend ostream &operator<<(ostream &os, const Aquarium &aquarium);
+    std::vector<Fish> eatFish(std::vector<Fish> fishs, Fish eater);
 
+    friend std::ostream &operator<<(std::ostream &os, const Aquarium &aquarium);
 
 };
-
 
 #endif //AQUARIUM_AQUARIUM_H

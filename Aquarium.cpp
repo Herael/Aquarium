@@ -6,22 +6,20 @@
 #include <vector>
 #include "Aquarium.h"
 
-
-
-const vector<Fish> &Aquarium::getFishs() const {
+const std::vector<Fish> &Aquarium::getFishs() const {
     return fishs;
 }
-const vector<Seaweed> &Aquarium::getSeaweeds() const {
+const std::vector<Seaweed> &Aquarium::getSeaweeds() const {
     return seaweeds;
 }
 int Aquarium::getTurn() const {
     return turn;
 }
 
-void Aquarium::setFishs(const vector<Fish> &fishs) {
+void Aquarium::setFishs(const std::vector<Fish> &fishs) {
     Aquarium::fishs = fishs;
 }
-void Aquarium::setSeaweeds(const vector<Seaweed> &seaweeds) {
+void Aquarium::setSeaweeds(const std::vector<Seaweed> &seaweeds) {
     Aquarium::seaweeds = seaweeds;
 }
 void Aquarium::setTurn(int turn) {
@@ -37,26 +35,27 @@ void Aquarium::addSeaweed(Seaweed seaweed) {
 }
 
 
-Aquarium::Aquarium(const vector<Fish> &fishs, const vector<Seaweed> &seaweeds) : fishs(fishs), seaweeds(seaweeds), turn(0) {}
+Aquarium::Aquarium(const std::vector<Fish> &fishs, const std::vector<Seaweed> &seaweeds) : fishs(fishs), seaweeds(seaweeds), turn(0) {}
 
 
 void Aquarium::passTime() {
     Aquarium::turn += 1;
     //Display all fishs and all seaweeds (fix problem with .begin on vector)
     int i;
+    std::cout << "\nTurn : " << Aquarium::turn << std::endl;
     if (Aquarium::fishs.empty()) {
-        cout << "No fish in water" << endl;
+        std::cout << "No fish in water" << std::endl;
     } else {
-        cout << "Fish : " << endl;
+        std::cout << "Fish : " << std::endl;
         for (i = 0; i < Aquarium::fishs.size(); i++) {
-            cout << Aquarium::fishs[i] << " \n";
+            std::cout << Aquarium::fishs[i] << " \n";
         }
     }
 
     if (Aquarium::seaweeds.empty()) {
-        cout << "No seaweed in water" << endl;
+        std::cout << "No seaweed in water" << std::endl;
     } else {
-        cout << "\nSeaweed : " << Aquarium::seaweeds.size() << endl;
+        std::cout << "\nSeaweed : " << Aquarium::seaweeds.size() << std::endl;
     }
 
 //    For display seaweeds with details, use this version :
@@ -71,14 +70,32 @@ void Aquarium::passTime() {
 //    }
 }
 
+std::vector<Fish> Aquarium::eatFish(std::vector<Fish> fishs, Fish eater) {
+
+//    todo
+//    auto predicate = [](Fish &f) {
+//        return (f.getHp() <= 0);
+//    };
+
+//    auto newEndIterator = remove_if(fishs.begin(), fishs.end(), predicate);
+//    fishs.erase(newEndIterator, fishs.end());  // erase everything after "newEndIterator"
+//    int ripLittleFish = random()/(fishs.size()-1);
+//    if(fishs[ripLittleFish] != eater) {
+//        return fishs.erase(ripLittleFish);
+//    } else {
+//        Aquarium::eatFish(fishs, eater);
+//    }
+}
+
+
 
 Aquarium::Aquarium() {
-    this->fishs = vector<Fish>();
-    this->seaweeds = vector<Seaweed>();
+    this->fishs = std::vector<Fish>();
+    this->seaweeds = std::vector<Seaweed>();
     this->turn = 0;
 }
 
-ostream &operator<<(ostream &os, const Aquarium &aquarium) {
+std::ostream &operator<<(std::ostream &os, const Aquarium &aquarium) {
     os << "turn: " << aquarium.turn;
     return os;
 }
