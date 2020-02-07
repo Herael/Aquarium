@@ -5,7 +5,6 @@
 #ifndef AQUARIUM_SEAWEED_H
 #define AQUARIUM_SEAWEED_H
 
-
 #include <ostream>
 
 class Seaweed {
@@ -15,16 +14,16 @@ private:
 
 public:
 
-    int getHp() const;
-    int getTurn() const;
+    int getHp();
+    int getTurn();
 
-    void setHp(int hp);
-    void setTurn(int turn);
+    void setHp(int i);
+    void setTurn(int i);
 
-    Seaweed(int turn);
-
-    friend std::ostream &operator<<(std::ostream &os, const Seaweed &seaweed);
+    Seaweed();
+    Seaweed(int hp, int turn);
 };
 
-
 #endif //AQUARIUM_SEAWEED_H
+
+

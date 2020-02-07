@@ -6,96 +6,99 @@
 #include <vector>
 #include "Aquarium.h"
 
-const std::vector<Fish> &Aquarium::getFishs() const {
-    return fishs;
-}
-const std::vector<Seaweed> &Aquarium::getSeaweeds() const {
-    return seaweeds;
-}
-int Aquarium::getTurn() const {
-    return turn;
+
+int Aquarium::getTurn() {
+    return this->turn;
 }
 
-void Aquarium::setFishs(const std::vector<Fish> &fishs) {
-    Aquarium::fishs = fishs;
-}
-void Aquarium::setSeaweeds(const std::vector<Seaweed> &seaweeds) {
-    Aquarium::seaweeds = seaweeds;
-}
-void Aquarium::setTurn(int turn) {
-    Aquarium::turn = turn;
-}
-
-
-void Aquarium::addFish(const Fish fish) {
-    Aquarium::fishs.push_back(fish);
-}
-void Aquarium::addSeaweed(Seaweed seaweed) {
-    Aquarium::seaweeds.push_back(seaweed);
-}
-
-
-Aquarium::Aquarium(const std::vector<Fish> &fishs, const std::vector<Seaweed> &seaweeds) : fishs(fishs), seaweeds(seaweeds), turn(0) {}
-
-
-void Aquarium::passTime() {
-    Aquarium::turn += 1;
-    //Display all fishs and all seaweeds (fix problem with .begin on vector)
-    int i;
-    std::cout << "\nTurn : " << Aquarium::turn << std::endl;
-    if (Aquarium::fishs.empty()) {
-        std::cout << "No fish in water" << std::endl;
-    } else {
-        std::cout << "Fish : " << std::endl;
-        for (i = 0; i < Aquarium::fishs.size(); i++) {
-            std::cout << Aquarium::fishs[i] << " \n";
-        }
-    }
-
-    if (Aquarium::seaweeds.empty()) {
-        std::cout << "No seaweed in water" << std::endl;
-    } else {
-        std::cout << "\nSeaweed : " << Aquarium::seaweeds.size() << std::endl;
-    }
-
-//    For display seaweeds with details, use this version :
-//
-//    if (Aquarium::seaweeds.empty()) {
-//        cout << "No seaweed in water" << endl;
-//    } else {
-//        cout << "\nSeaweed : " << endl;
-//        for (i = 0; i < Aquarium::seaweeds.size(); i++) {
-//            cout << Aquarium::seaweeds[i] << endl;
-//        }
-//    }
-}
-
-std::vector<Fish> Aquarium::eatFish(std::vector<Fish> fishs, Fish eater) {
-
-//    todo
-//    auto predicate = [](Fish &f) {
-//        return (f.getHp() <= 0);
-//    };
-
-//    auto newEndIterator = remove_if(fishs.begin(), fishs.end(), predicate);
-//    fishs.erase(newEndIterator, fishs.end());  // erase everything after "newEndIterator"
-//    int ripLittleFish = random()/(fishs.size()-1);
-//    if(fishs[ripLittleFish] != eater) {
-//        return fishs.erase(ripLittleFish);
-//    } else {
-//        Aquarium::eatFish(fishs, eater);
-//    }
-}
-
-
-
-Aquarium::Aquarium() {
+Aquarium::Aquarium(){
     this->fishs = std::vector<Fish>();
     this->seaweeds = std::vector<Seaweed>();
     this->turn = 0;
 }
 
-std::ostream &operator<<(std::ostream &os, const Aquarium &aquarium) {
-    os << "turn: " << aquarium.turn;
-    return os;
+// works
+Aquarium::Aquarium(std::vector<Fish> fishs, std::vector<Seaweed> seaweeds){
+    this->fishs = fishs;
+    this->seaweeds = seaweeds;
+    this->turn = 0;
+}
+
+void Aquarium::addFish(std::string name, bool gender) {
+    Fish f = Fish::createFish(10, name, gender, thon, 0);
+}
+
+void Aquarium::addSeaweed(Seaweed s) {
+    this->seaweeds.push_back(s);
+}
+
+void Aquarium::eatFish() {
+    srand(time(NULL));
+    int victim = 0;
+    for(int i = 0; i < this->fishs.size(); ++i) {
+        if(this->fishs[i].getHp() > 0){
+            this->fishs[i].setHp(this->fishs[i].getHp()-1);
+            if(this->fishs[i].getCarnivorous() && this->fishs[i].getHp() <= 5) {
+                victim = rand() % this->fishs.size();
+                if(victim != i && this->fishs[i].getBreed() != this->fishs[victim].getBreed()){
+                    this->fishs[victim].setHp(this->fishs[victim].getHp()-4);
+                    this->fishs[i].setHp(this->fishs[i].getHp()+5);
+                    std::cout << "Le poisson " << this->fishs[i].getName() << " a mangé le poisson " << this->fishs[victim].getName() << std::endl;
+                }else {
+                    std::cout << "Le poisson " << this->fishs[i].getName() << " s'est fait citrouille" << std::endl;
+                }
+            }
+
+            else if(!this->fishs[i].getCarnivorous()) {
+                victim = rand() % this->seaweeds.size();
+                this->seaweeds[victim].setHp(this->seaweeds[victim].getHp()-2);
+                this->fishs[i].setHp(this->fishs[i].getHp()+3);
+                std::cout << "Le poisson " << this->fishs[i].getName() << " a mangé l'algue " << victim << std::endl;
+            }
+        }
+    }
+}
+
+
+
+/**
+ * AKA : La balayeuse de la propreté
+ */
+void Aquarium::sweeper() {
+
+    //todo
+//    auto predicate = [](Fish &f) {
+//        return (f.getHp() <= 0);
+//    };
+//    auto Iterator = remove_if(this->fishs.begin(), this->fishs.end(), predicate);
+//    this->fishs.erase(Iterator, this->fishs.end());
+//
+//    auto Iterator2 = remove_if(this->fishs.begin(), this->fishs.end(), predicate);
+//    this->fishs.erase(Iterator2, this->fishs.end());
+
+}
+
+void Aquarium::growthSeaweed() {
+    for (int i = 0; i < this->seaweeds.size(); ++i) {
+        seaweeds[i].setHp(seaweeds[i].getHp()+1);
+    }
+}
+
+
+void Aquarium::passTime() {
+
+    eatFish();
+    sweeper(); //todo
+
+    growthSeaweed();
+
+
+
+    this->turn+=1;
+    int i;
+    std::cout << "\nFishs :" << std::endl;
+    for(i = 0; i < this->fishs.size(); i++)
+        std::cout << "Name : " << this->fishs[i].getName() << " / Hp : " << this->fishs[i].getHp() << std::endl;
+
+    std::cout << "\nQuantity of seaweeds : " << this->seaweeds.size() << std::endl;
 }

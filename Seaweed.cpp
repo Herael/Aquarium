@@ -4,27 +4,26 @@
 
 #include "Seaweed.h"
 
-int Seaweed::getHp() const {
+int Seaweed::getHp() {
     return hp;
 }
-int Seaweed::getTurn() const {
+int Seaweed::getTurn() {
     return turn;
 }
 
-void Seaweed::setHp(int hp) {
-    Seaweed::hp = hp;
+void Seaweed::setHp(int h) {
+    Seaweed::hp = h;
 }
-void Seaweed::setTurn(int turn) {
-    Seaweed::turn = turn;
+void Seaweed::setTurn(int t) {
+    Seaweed::turn = t;
 }
 
-Seaweed::Seaweed(int turn) :turn(turn) {
+Seaweed::Seaweed() {
     this->hp = 10;
+    this->turn = 0;
 }
 
-std::ostream &operator<<(std::ostream &os, const Seaweed &seaweed) {
-    os << "hp: " << seaweed.hp << " turn: " << seaweed.turn;
-    return os;
+Seaweed::Seaweed(int hp, int turn) {
+    this->hp = hp;
+    this->turn = turn;
 }
-
-

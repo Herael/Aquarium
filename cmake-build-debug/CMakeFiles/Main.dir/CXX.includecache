@@ -15,14 +15,14 @@ Aquarium.h
 /Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.h
 
 /Users/benjaminrousval/esgi/c++/Aquarium/Aquarium.h
-Fish.h
-/Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
-Seaweed.h
-/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h
 iostream
 -
 vector
 -
+Fish.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
+Seaweed.h
+/Users/benjaminrousval/esgi/c++/Aquarium/Seaweed.h
 
 /Users/benjaminrousval/esgi/c++/Aquarium/Fish.h
 iostream

@@ -14,35 +14,31 @@ private:
     int hp;
     std::string name;
     bool gender;
-    bool isCarnivorous;
+    bool carnivorous;
     Breed breed;
     int turn;
 
 public:
+    Fish(int hp, std::string name, bool gender, bool carnivorous, Breed breed , int turn);
+    static Fish createFish(int hp, std::string name,bool gender, Breed breed, int turn);
 
-    int getHp() const;
-    const std::string &getName() const;
-    bool isGender() const;
-    Breed getBreed() const;
-    bool getIsCarnivorous() const;
-    int getTurn() const;
+    int getHp();
+    std::string getName();
+    bool getGender();
+    bool getCarnivorous();
+    Breed getBreed();
+    int getTurn();
 
-    void setHp(int hp);
-    void setName(const std::string &name);
-    void setGender(bool gender);
-    void setBreed(Breed breed);
-    void setIsCarnivorous(bool isCarnivorous);
-    void setTurn(int turn);
 
-    Fish(int hp, const std::string &name, bool gender, Breed breed, int turn);
-
-    //ToString
-    friend std::ostream &operator<<(std::ostream &os, const Fish &fish);
+    void setHp(int i);
+    void setName(std::string n);
+    void setGender(bool g);
+    void setCarnivorous(bool c);
+    void setBreed(Breed b);
+    void setTurn(int t);
 
     bool operator==(const Fish &fish) const;
     bool operator!=(const Fish &fish) const;
-
 };
 
-
-#endif //AQUARIUM_FISH_H
+#endif
