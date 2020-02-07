@@ -25,10 +25,12 @@ public:
     static void addFish(std::string name, bool gender);
     void addSeaweed(Seaweed s);
 
+    void bouji();
+    void changeGender();
     void eatFish();
     void sweeper(); //todo
     void growthSeaweed();
-
+    void overage();
 
     void passTime();
 };

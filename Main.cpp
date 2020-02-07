@@ -12,14 +12,14 @@
 int main() {
 
     std::cout << "Hey ! Welcome :)" << std::endl;
-    int turn = 0;
+    int turn = 2;
 
     std::vector<Fish> fishs;
-    fishs.push_back(Fish::createFish(10, "Michel", true, carpe, 0));
-    fishs.push_back(Fish::createFish(4, "Mathilda", false, poissonClown, 0));
+    fishs.push_back(Fish::createFish(10, "Michel", true, bar, 9));
+    fishs.push_back(Fish::createFish(4, "Mathilda", false, poissonClown, 19));
     fishs.push_back(Fish::createFish(10, "Maurice", true, bar, 0));
 
-    Seaweed seaweed = Seaweed();
+    Seaweed seaweed = Seaweed(10, 24);
     Seaweed seaweedBis = Seaweed();
     Seaweed seaweedTer = Seaweed();
     Seaweed seaweedAuBoutDeLaRue = Seaweed();
@@ -37,6 +37,10 @@ int main() {
 
     Aquarium aquarium = Aquarium(fishs, seaweeds);
 
-    aquarium.passTime();
+
+    for(int i = 0; i< turn; i++){
+        aquarium.passTime();
+    }
+
 
 }
