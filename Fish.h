@@ -5,42 +5,40 @@
 #ifndef AQUARIUM_FISH_H
 #define AQUARIUM_FISH_H
 #include <iostream>
-
-using namespace std;
+#include <vector>
 
 enum Breed {merou, thon, poissonClown, sole, bar, carpe};
 
 class Fish {
 private:
     int hp;
-    string name;
+    std::string name;
     bool gender;
-    bool isCarnivorous;
+    bool carnivorous;
     Breed breed;
     int turn;
 
 public:
+    Fish(int hp, std::string name, bool gender, bool carnivorous, Breed breed , int turn);
+    static Fish createFish(int hp, std::string name,bool gender, Breed breed, int turn);
 
-    int getHp() const;
-    const string &getName() const;
-    bool isGender() const;
-    Breed getBreed() const;
-    bool getIsCarnivorous() const;
-    int getTurn() const;
-
-    void setHp(int hp);
-    void setName(const string &name);
-    void setGender(bool gender);
-    void setBreed(Breed breed);
-    void setIsCarnivorous(bool isCarnivorous);
-    void setTurn(int turn);
+    int getHp();
+    std::string getName();
+    bool getGender();
+    bool getCarnivorous();
+    Breed getBreed();
+    int getTurn();
 
 
-    Fish(int hp, const string &name, bool gender, Breed breed, int turn);
+    void setHp(int i);
+    void setName(std::string n);
+    void setGender(bool g);
+    void setCarnivorous(bool c);
+    void setBreed(Breed b);
+    void setTurn(int t);
 
-    //ToString
-    friend ostream &operator<<(ostream &os, const Fish &fish);
+    bool operator==(const Fish &fish) const;
+    bool operator!=(const Fish &fish) const;
 };
 
-
-#endif //AQUARIUM_FISH_H
+#endif

@@ -4,46 +4,35 @@
 
 #ifndef AQUARIUM_AQUARIUM_H
 #define AQUARIUM_AQUARIUM_H
-#include "Fish.h"
-#include "Seaweed.h"
 #include <iostream>
 #include <vector>
-
-
-using namespace std;
-
+#include "Fish.h"
+#include "Seaweed.h"
 
 class Aquarium {
 private:
-
-    vector<Fish> fishs;
-    vector<Seaweed> seaweeds;
+    std::vector<Fish> fishs;
+    std::vector<Seaweed> seaweeds;
     int turn;
 
 public:
 
-    const vector<Fish> &getFishs() const;
-    const vector<Seaweed> &getSeaweeds() const;
-
-    void setFishs(const vector<Fish> &fishs);
-    void setSeaweeds(const vector<Seaweed> &seaweeds);
-
-    void addFish(Fish fish);
-    void addSeaweed(Seaweed seaweed);
-
-    int getTurn() const;
-
-    void setTurn(int turn);
-
-    void passTime();
+    int getTurn();
 
     Aquarium();
-    Aquarium(const vector<Fish> &fishs, const vector<Seaweed> &seaweeds);
+    Aquarium(std::vector<Fish> fishs, std::vector<Seaweed> seaweeds);
 
-    friend ostream &operator<<(ostream &os, const Aquarium &aquarium);
+    static void addFish(std::string name, bool gender);
+    void addSeaweed(Seaweed s);
 
+    void bouji();
+    void changeGender();
+    void eatFish();
+    void sweeper(); //todo
+    void growthSeaweed();
+    void overage();
 
+    void passTime();
 };
-
 
 #endif //AQUARIUM_AQUARIUM_H
