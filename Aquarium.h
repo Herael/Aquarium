@@ -25,6 +25,9 @@ public:
     static void addFish(std::string name, bool gender);
     void addSeaweed(Seaweed s);
 
+    void initFish();
+    void initSeaweed();
+
     void bouji();
     void changeGender();
     void eatFish();

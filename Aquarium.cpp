@@ -6,9 +6,21 @@
 #include <vector>
 #include "Aquarium.h"
 
+void Aquarium::initFish() {
 
-int Aquarium::getTurn() {
-    return this->turn;
+    this->fishs.push_back(Fish::createFish(10, "Michel", true, bar, 10));
+    this->fishs.push_back(Fish::createFish(4, "Mathilda", false, poissonClown, 19));
+    this->fishs.push_back(Fish::createFish(10, "Maurice", true, bar, 0));
+
+}
+
+void Aquarium::initSeaweed() {
+
+    for (int i = 0; i < 4; i++)
+        addSeaweed(Seaweed());
+
+    Seaweed oldSeaweed = Seaweed(10, 24);
+    addSeaweed(oldSeaweed);
 }
 
 Aquarium::Aquarium(){
@@ -17,21 +29,19 @@ Aquarium::Aquarium(){
     this->turn = 0;
 }
 
-// works
+int Aquarium::getTurn() {
+    return this->turn;
+}
+
 Aquarium::Aquarium(std::vector<Fish> fishs, std::vector<Seaweed> seaweeds){
     this->fishs = fishs;
     this->seaweeds = seaweeds;
     this->turn = 0;
 }
 
-void Aquarium::addFish(std::string name, bool gender) {
-    Fish f = Fish::createFish(10, name, gender, thon, 0);
-}
-
 void Aquarium::addSeaweed(Seaweed s) {
     this->seaweeds.push_back(s);
 }
-
 
 void Aquarium::changeGender() {
 
