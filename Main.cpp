@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include <vector>
+#include <fstream>
 #include "Main.h"
 #include "Aquarium.h"
 
@@ -11,15 +11,26 @@
 int main() {
 
     std::cout << "Hey ! Welcome :)" << std::endl;
-    int turn = 2;
-    int save = 1;
+    int turn = 25;
+    int save = 23;
 
     Aquarium aquarium = Aquarium();
     aquarium.initFish();
     aquarium.initSeaweed();
 
+    std::ofstream out("out.txt");
+    auto coutbuf = std::cout.rdbuf(out.rdbuf()); //save and redirect
+
+
     for (int i = 0; i < turn; i++) {
         std::cout << "Tours : " << i + 1 << std::endl;
         aquarium.passTime(i == save);
     }
+    out.close();
+
+    std::cout.rdbuf(coutbuf); //reset to standard output again
+    std::ifstream f("out.txt");
+    if (f.is_open())
+        std::cout << f.rdbuf();
+    f.close();
 }
