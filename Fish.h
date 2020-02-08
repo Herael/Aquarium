@@ -39,6 +39,8 @@ public:
 
     bool operator==(const Fish &fish) const;
     bool operator!=(const Fish &fish) const;
+
+    friend std::ostream &operator<<(std::ostream &os, const Fish &fish);
 };
 
 #endif

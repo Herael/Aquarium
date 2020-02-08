@@ -27,3 +27,8 @@ Seaweed::Seaweed(int hp, int turn) {
     this->hp = hp;
     this->turn = turn;
 }
+
+std::ostream &operator<<(std::ostream &os, const Seaweed &seaweed) {
+    os << "hp: " << seaweed.hp << " turn: " << seaweed.turn;
+    return os;
+}

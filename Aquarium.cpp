@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include "Aquarium.h"
 
@@ -191,7 +192,33 @@ void Aquarium::growthSeaweed() {
 }
 
 
-void Aquarium::passTime() {
+void Aquarium::setStateInFile() {
+
+    int i;
+    std::string actualTurn = std::to_string(getTurn());
+    std::ofstream myfile ("aquarium_"+actualTurn+".poisson");
+    if (myfile.is_open())
+    {
+        myfile << "Turn : " << actualTurn << "\n" ;
+        myfile << "Fishs : \n";
+        for (i = 0; i < this->fishs.size(); i++) {
+            myfile <<"\t" << "[" << i << "] : " << this->fishs[i] << "\n";
+        }
+        myfile << "\nSeaweeds : \n";
+        for(i = 0; i < this->seaweeds.size(); i++){
+            myfile <<"\t" << "[" << i << "] : " << this->seaweeds[i] << "\n";
+        }
+        myfile.close();
+    }
+    else std::cout << "Unable to open file";
+}
+
+
+
+void Aquarium::passTime(bool saveInFile) {
+
+    if(saveInFile)
+        setStateInFile();
 
     changeGender();
     bouji();
@@ -209,3 +236,4 @@ void Aquarium::passTime() {
 
     std::cout << "\nQuantity of seaweeds : " << this->seaweeds.size()<< "\n" << std::endl;
 }
+

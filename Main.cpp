@@ -12,6 +12,7 @@ int main() {
 
     std::cout << "Hey ! Welcome :)" << std::endl;
     int turn = 2;
+    int save = 1;
 
     Aquarium aquarium = Aquarium();
     aquarium.initFish();
@@ -19,6 +20,6 @@ int main() {
 
     for (int i = 0; i < turn; i++) {
         std::cout << "Tours : " << i + 1 << std::endl;
-        aquarium.passTime();
+        aquarium.passTime(i == save);
     }
 }

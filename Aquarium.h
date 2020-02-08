@@ -35,7 +35,9 @@ public:
     void growthSeaweed();
     void overage();
 
-    void passTime();
+    void setStateInFile();
+
+    void passTime(bool saveInFile);
 };
 
 #endif //AQUARIUM_AQUARIUM_H

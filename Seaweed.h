@@ -22,6 +22,8 @@ public:
 
     Seaweed();
     Seaweed(int hp, int turn);
+
+    friend std::ostream &operator<<(std::ostream &os, const Seaweed &seaweed);
 };
 
 #endif //AQUARIUM_SEAWEED_H
