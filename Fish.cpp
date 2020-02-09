@@ -63,15 +63,6 @@ void Fish::setTurn(int i){
     this->turn = i;
 }
 
-
-bool Fish::operator==(const Fish &f) const {
-    return (hp == f.hp && name == f.name && gender == f.gender && carnivorous == f.carnivorous && breed == f.breed && turn == f.turn);
-}
-
-bool Fish::operator!=(const Fish &f) const {
-    return !(f == *this);
-}
-
 std::ostream &operator<<(std::ostream &os, const Fish &fish) {
     os << "hp: " << fish.hp << " name: " << fish.name << " gender: " << fish.gender << " carnivorous: "
        << fish.carnivorous << " breed: " << fish.breed << " turn: " << fish.turn;

@@ -44,6 +44,7 @@ void Aquarium::addSeaweed(Seaweed s) {
     this->seaweeds.push_back(s);
 }
 
+
 void Aquarium::changeGender() {
 
     for(int i = 0; i < this->fishs.size(); i++) {
@@ -212,7 +213,6 @@ void Aquarium::setStateInFile() {
     }
     else std::cout << "Unable to open file";
 }
-
 
 
 void Aquarium::passTime(bool saveInFile) {

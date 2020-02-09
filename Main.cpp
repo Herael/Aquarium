@@ -11,8 +11,8 @@
 int main() {
 
     std::cout << "Hey ! Welcome :)" << std::endl;
-    int turn = 25;
-    int save = 23;
+    int turn = 10;
+    int save = 6;
 
     Aquarium aquarium = Aquarium();
     aquarium.initFish();
@@ -21,13 +21,11 @@ int main() {
     std::ofstream out("out.txt");
     auto coutbuf = std::cout.rdbuf(out.rdbuf()); //save and redirect
 
-
     for (int i = 0; i < turn; i++) {
         std::cout << "Tours : " << i + 1 << std::endl;
         aquarium.passTime(i == save);
     }
     out.close();
-
     std::cout.rdbuf(coutbuf); //reset to standard output again
     std::ifstream f("out.txt");
     if (f.is_open())

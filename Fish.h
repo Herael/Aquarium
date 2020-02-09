@@ -37,9 +37,6 @@ public:
     void setBreed(Breed b);
     void setTurn(int t);
 
-    bool operator==(const Fish &fish) const;
-    bool operator!=(const Fish &fish) const;
-
     friend std::ostream &operator<<(std::ostream &os, const Fish &fish);
 };
 
